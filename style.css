@@ -13,7 +13,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .input-info{
@@ -26,7 +26,7 @@ body{
     height: auto;
     padding: 2rem;
     gap: 1rem;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     border-radius: 1.5rem;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.51);
 }
@@ -73,11 +73,71 @@ body{
     box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3); 
 }
 
+
+
+
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:1px solid #0000FF;
+    padding: 1rem 0;
+}
+
+.delete {
+    width: 3rem;
+    font-size: 0.7rem;
+    height: 1.5rem;
+    color: red;
+    border: 1px solid red;
+    border-radius: 1.5rem;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    transform: scale(1); 
+    
+}
+.delete:hover{
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    cursor: pointer;
+    transform: scale(1.1); /* Zoom */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    
+}
+
 .output{
     background-color: azure;
+    padding: 1.5rem;
     width: 40%;
-    border-radius:1.5rem ;
-    height: 12vh;
+    height: auto;
+    max-height: 30vh;
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.51);
+    border-radius: 5px;
+    max-height: 300px; /* Limite de hauteur pour le défilement */
+    overflow-y: auto; /* Activation du défilement vertical */
+    overflow-x: hidden;
+}
 
+.output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output::-webkit-scrollbar-track {
+    background: #f0f0f0; 
+    border-radius: 10px; /* Coins arrondis */
+
+}
+
+.output::-webkit-scrollbar-thumb {
+    background: #4fe24a; /* Couleur de la poignée */
+    border-radius: 10px; /* Coins arrondis de la poignée */
+    border: 2px solid #f0f0f0; /* Espace autour pour centrer à l'intérieur */
+}
+
+
+.completed {
+    text-decoration: line-through;
+    color: gray; /* Optionnel : change la couleur du texte pour indiquer son état */
+    opacity: 0.7; /* Optionnel : donne un effet visuel de tâche "invisible" */
 }
